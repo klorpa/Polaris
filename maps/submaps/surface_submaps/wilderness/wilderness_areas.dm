@@ -146,6 +146,8 @@
 /area/submap/ChemSpill2
 	name = "POI - Acrid Lake"
 	ambience = AMBIENCE_FOREBODING
+	area_blurb = "A acrid, chemical smell comes from this pond, the vegetation around it is all dead."
+	area_blurb_category = "chemspilllake"
 
 /area/submap/FrostflyNest
 	name = "POI - Frostfly Nest"
@@ -187,3 +189,7 @@
 	name = "POI - Gene Lab"
 	ambience = AMBIENCE_HIGHSEC
 	requires_power = FALSE
+
+/area/submap/CollapsedMine
+	name = "POI - Collapsed Mine"
+	ambience = AMBIENCE_FOREBODING

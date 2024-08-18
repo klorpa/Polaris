@@ -150,7 +150,7 @@
 	if(istype(W, /obj/item/tank) && !stat)
 		to_chat(user, "<span class='warning'>Please open the maintenance hatch first.</span>")
 
-/obj/machinery/oxygen_pump/examine(var/mob/user)
+/obj/machinery/oxygen_pump/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(tank)
 		. += "The meter shows [round(tank.air_contents.return_pressure())] kPa."
@@ -326,7 +326,7 @@
 							H.adjustOxyLoss(-(rand(1,8)))
 
 				if(H.stat == DEAD)
-					H.add_modifier(/datum/modifier/bloodpump_corpse, 6 SECONDS)
+					H.add_modifier(/datum/modifier/bloodpump/corpse, 6 SECONDS)
 
 				else
 					H.add_modifier(/datum/modifier/bloodpump, 6 SECONDS)

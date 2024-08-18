@@ -26,16 +26,15 @@
 
 // AI procs
 /datum/job/ai/equip(var/mob/living/carbon/human/H)
-	if(!H)	return 0
-	return 1
+	return H
 
 /datum/job/ai/is_position_available()
 	return (empty_playable_ai_cores.len != 0)
 
-/datum/job/ai/equip_preview(mob/living/carbon/human/H)
+/datum/job/ai/equip_preview(mob/living/carbon/human/H, var/alt_title, var/datum/preferences/prefs)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/straight_jacket(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/collectable/cardborg(H), slot_head)
-	return 1
+	return H
 
 //////////////////////////////////
 //			Cyborg
@@ -57,9 +56,17 @@
 	assignable = FALSE
 	mob_type = JOB_SILICON_ROBOT
 	outfit_type = /decl/hierarchy/outfit/job/silicon/cyborg
+	substitute_announce_title = "Stationbound Synthetic"
 	job_description = "A Cyborg is a mobile station synthetic, piloted by a cybernetically preserved brain. It is considered a person, but is still required \
 						to follow its Laws."
-	alt_titles = list("Robot" = /datum/alt_title/robot, "Drone" = /datum/alt_title/drone)
+	alt_titles = list(
+		"Cyborg, Flying",
+		"Robot" =           /datum/alt_title/robot,
+		"Robot, Flying" =   /datum/alt_title/robot,
+		"Drone" =           /datum/alt_title/drone,
+		"Drone, Flying" =   /datum/alt_title/drone,
+		"Drone, Platform" = /datum/alt_title/drone
+	)
 
 // Cyborg Alt Titles
 /datum/alt_title/robot
@@ -74,10 +81,9 @@
 
 // Cyborg procs
 /datum/job/cyborg/equip(var/mob/living/carbon/human/H)
-	if(!H)	return 0
-	return 1
+	return H
 
-/datum/job/cyborg/equip_preview(mob/living/carbon/human/H)
+/datum/job/cyborg/equip_preview(mob/living/carbon/human/H, var/alt_title, var/datum/preferences/prefs)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/costume/cardborg(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/collectable/cardborg(H), slot_head)
-	return 1
+	return H

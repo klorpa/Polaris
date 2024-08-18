@@ -345,12 +345,6 @@
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
 
-/obj/item/clothing/accessory/scarf/teshari/neckscarf
-	name = "small neckscarf"
-	desc = "a neckscarf that is too small for a human's neck"
-	icon_state = "tesh_neckscarf"
-	species_restricted = list(SPECIES_TESHARI)
-
 //bracelets
 
 /obj/item/clothing/accessory/bracelet
@@ -448,8 +442,8 @@
 	. = ..(ml, MAT_BRONZE)
 
 /obj/item/clothing/accessory/halfcape
-	name = "half cape"
-	desc = "A tasteful half-cape, suitible for European nobles and retro anime protagonists."
+	name = "retro half cape"
+	desc = "A tasteful half-cape with epaulettes, suitible for European nobles and retro anime protagonists."
 	icon_state = "halfcape"
 	slot = ACCESSORY_SLOT_DECOR
 
@@ -465,37 +459,36 @@
 	icon_state = "sash"
 	slot = ACCESSORY_SLOT_OVER
 
-/obj/item/clothing/accessory/pride
+/obj/item/clothing/accessory/medal/pride
 	name = "pride pin"
 	desc = "A pin displaying pride in one's identity."
 	icon_state = "pride"
-	slot = ACCESSORY_SLOT_MEDAL
 
-/obj/item/clothing/accessory/pride/bi
+/obj/item/clothing/accessory/medal/pride/bi
 	name = "bisexual pride pin"
 	icon_state = "pride_bi"
 
-/obj/item/clothing/accessory/pride/trans
+/obj/item/clothing/accessory/medal/pride/trans
 	name = "transgender pride pin"
 	icon_state = "pride_trans"
 
-/obj/item/clothing/accessory/pride/ace
+/obj/item/clothing/accessory/medal/pride/ace
 	name = "asexual pride pin"
 	icon_state = "pride_ace"
 
-/obj/item/clothing/accessory/pride/enby
+/obj/item/clothing/accessory/medal/pride/enby
 	name = "nonbinary pride pin"
 	icon_state = "pride_enby"
 
-/obj/item/clothing/accessory/pride/pan
+/obj/item/clothing/accessory/medal/pride/pan
 	name = "pansexual pride pin"
 	icon_state = "pride_pan"
 
-/obj/item/clothing/accessory/pride/lesbian
+/obj/item/clothing/accessory/medal/pride/lesbian
 	name = "lesbian pride pin"
 	icon_state = "pride_lesbian"
 
-/obj/item/clothing/accessory/pride/intersex
+/obj/item/clothing/accessory/medal/pride/intersex
 	name = "intersex pride pin"
 	icon_state = "pride_intersex"
 
@@ -582,9 +575,9 @@
 	icon_state = "watch"
 	slot_flags = SLOT_GLOVES | SLOT_TIE
 
-/obj/item/clothing/accessory/watch/examine(mob/user)
+/obj/item/clothing/accessory/watch/examine(mob/user, distance, infix, suffix)
 	. = ..()
-	if(Adjacent(user))
+	if(distance < 2)
 		. += "The watch shows that the time is [stationtime2text()]."
 
 /obj/item/clothing/accessory/watch/silver
@@ -610,3 +603,43 @@
 	desc = "A Gilthari ZeitMeister classic, a finely tuned wristwatch with a fancy leather strap."
 	description_fluff = "Made from real synth leather."
 	icon_state = "watch_leather"
+
+//magical girl ribbon bows
+
+/obj/item/clothing/accessory/frontbow
+	name = "ribbon bow"
+	desc = "An oversized bow that sits just below the collar. Seems like something a magical girl would wear."
+	icon_state = "frontbow"
+	slot = ACCESSORY_SLOT_TIE
+
+/obj/item/clothing/accessory/backbow
+	name = "waist bow"
+	desc = "An oversized bow that sits on the small of your back. Seems like something a magical girl would wear."
+	icon_state = "backbow"
+	slot = ACCESSORY_SLOT_DECOR
+
+/obj/item/clothing/accessory/charm
+	name = "wooden charm"
+	desc = "A simple carved wooden charm attached to a length of string."
+	icon_state = "wooden_charm"
+	w_class = ITEMSIZE_SMALL
+	slot_flags = SLOT_MASK | SLOT_TIE
+
+/obj/item/clothing/accessory/charm/sifwood
+	name = "sivian wood charm"
+	icon_state = "sifwood_charm"
+
+/obj/item/clothing/accessory/charm/stone
+	name = "stone charm"
+	desc = "A small carved stone attached to a length of string."
+	icon_state = "stone_charm"
+
+/obj/item/clothing/accessory/charm/metal
+	name = "metal charm"
+	desc = "A small disc of metal attached to a length of string."
+	icon_state = "metal_charm"
+
+/obj/item/clothing/accessory/charm/bone
+	name = "bone charm"
+	desc = "A carved bone charm attached to a length of string."
+	icon_state = "bone_charm"

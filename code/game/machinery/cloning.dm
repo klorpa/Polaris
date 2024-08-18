@@ -110,6 +110,7 @@
 		R.dna.real_name = "clone ([rand(0,999)])"
 	H.real_name = R.dna.real_name
 	H.gender = R.gender
+	H.identifying_gender = R.identifying_gender
 	H.descriptors = R.body_descriptors
 
 	//Get the clone body ready
@@ -534,7 +535,7 @@
 	read_only = !read_only
 	to_chat(user, "You flip the write-protect tab to [read_only ? "protected" : "unprotected"].")
 
-/obj/item/disk/data/examine(mob/user)
+/obj/item/disk/data/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	. += "The write-protect tab is set to [read_only ? "protected" : "unprotected"]."
 

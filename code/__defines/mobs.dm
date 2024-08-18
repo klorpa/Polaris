@@ -154,6 +154,21 @@
 #define MOB_TINY 		5
 #define MOB_MINISCULE	1
 
+// Gluttony levels. Used for eating items and mobs.
+#define GLUT_NONE 0       // Cannot eat any mob or item.
+#define GLUT_TINY 1       // Eat anything tiny and smaller
+#define GLUT_SMALLER 2    // Eat anything smaller than we are
+#define GLUT_ANYTHING 4   // Eat anything, ever
+
+#define GLUT_ITEM_TINY 8         // Eat items with a w_class of small or smaller
+#define GLUT_ITEM_NORMAL 16      // Eat items with a w_class of normal or smaller
+#define GLUT_ITEM_ANYTHING 32    // Eat any item
+#define GLUT_PROJECTILE_VOMIT 64 // When vomitting, does it fly out?
+
+// Devour speeds, returned by can_devour()
+#define DEVOUR_SLOW 1
+#define DEVOUR_FAST 2
+
 #define TINT_NONE 0
 #define TINT_MODERATE 1
 #define TINT_HEAVY 2
@@ -277,6 +292,10 @@
 #define TASTE_DULL 0.5 //anything below 30%
 #define TASTE_NUMB 0.1 //anything below 150%
 
+#define TASTE_STRING_DEFAULT     "default"
+#define TASTE_DATA_FIELD         "taste_strings"
+#define TASTE_DATA(DATA)         list(TASTE_DATA_FIELD = DATA)
+
 //Used by emotes
 #define VISIBLE_MESSAGE 1
 #define AUDIBLE_MESSAGE 2
@@ -350,6 +369,11 @@
 #define SA_ANIMAL	2
 #define SA_ROBOTIC	3
 #define SA_HUMANOID	4
+
+// Robot module categorization
+#define ROBOT_MODULE_TYPE_GROUNDED "grounded"
+#define ROBOT_MODULE_TYPE_FLYING   "flying"
+#define ROBOT_MODULE_TYPE_PLATFORM "platform"
 
 // More refined version of SA_* ""intelligence"" separators.
 // Now includes bitflags, so to target two classes you just do 'MOB_CLASS_ANIMAL|MOB_CLASS_HUMANOID'

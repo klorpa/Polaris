@@ -424,7 +424,7 @@
 			//robot remains
 			apply_prefix = FALSE
 			item_type = "[pick("mechanical","robotic","cyborg")] [pick("remains","chassis","debris")]"
-			icon = 'icons/mob/robots.dmi'
+			icon = 'icons/mob/robot_gibs.dmi'
 			icon_state = "remainsrobot"
 			additional_desc = pick("Almost mistakeable for the remains of a modern cyborg.",\
 			"They are barely recognisable as anything other than a pile of waste metals.",\
@@ -706,12 +706,14 @@
 	if(!desc)
 		desc = "This item is completely [pick("alien","bizarre")]."
 
+	var/is_item = istype(new_item, /obj/item)
+
 	//icon and icon_state should have already been set
 	if(new_item)
 		new_item.name = name
 		new_item.desc = src.desc
 
-		if(talkative)
+		if(talkative && is_item)
 			new_item.talking_atom = new(new_item)
 			LAZYINITLIST(new_item.origin_tech)
 			new_item.origin_tech[TECH_ARCANE] += 1
@@ -726,7 +728,7 @@
 
 		qdel(src)
 
-	else if(talkative)
+	else if(talkative && is_item)
 		src.talking_atom = new(src)
 		LAZYINITLIST(origin_tech)
 		origin_tech[TECH_ARCANE] += 1

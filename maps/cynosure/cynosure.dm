@@ -5,7 +5,6 @@
 	#include "cynosure_jobs.dm"
 	#include "cynosure_elevator.dm"
 	#include "cynosure_events.dm"
-	#include "cynosure_overrides.dm"
 	#include "cynosure_presets.dm"
 	#include "cynosure_shuttles.dm"
 
@@ -15,6 +14,7 @@
 	#include "loadout/loadout_uniform.dm"
 
 	#include "datums/supplypacks/munitions.dm"
+	#include "datums/supplypacks/science.dm"
 	#include "datums/random_map.dm"
 	#include "datums/spawn.dm"
 

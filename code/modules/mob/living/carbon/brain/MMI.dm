@@ -197,7 +197,7 @@
 /obj/item/mmi/digital/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	return	//Doesn't do anything right now because none of the things that can be done to a regular MMI make any sense for these
 
-/obj/item/mmi/digital/examine(mob/user)
+/obj/item/mmi/digital/examine(mob/user, distance, infix, suffix)
 	. = ..()
 
 	if(src.brainmob && src.brainmob.key)
@@ -211,7 +211,7 @@
 				. += "<span class='deadsay'>It appears to be completely inactive.</span>"
 	else
 		. += "<span class='deadsay'>It appears to be completely inactive.</span>"
-		
+
 /obj/item/mmi/digital/emp_act(severity)
 	if(!src.brainmob)
 		return

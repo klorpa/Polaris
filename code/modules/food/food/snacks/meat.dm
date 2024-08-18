@@ -5,6 +5,11 @@
 	health = 180
 	filling_color = "#FF1C1C"
 	center_of_mass = list("x"=16, "y"=14)
+	drying_wetness = 60
+	dried_type = /obj/item/reagent_containers/food/snacks/jerky/meat
+
+/obj/item/reagent_containers/food/snacks/meat/get_drying_state()
+	return "meat"
 
 /obj/item/reagent_containers/food/snacks/meat/Initialize()
 	. = ..()
@@ -32,6 +37,22 @@
 	else
 		..()
 
+/obj/item/reagent_containers/food/snacks/rawcutlet
+	name = "raw cutlet"
+	desc = "A thin piece of raw meat."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "rawcutlet"
+	bitesize = 1
+	center_of_mass = list("x"=17, "y"=20)
+	backyard_grilling_product = /obj/item/reagent_containers/food/snacks/cutlet
+	backyard_grilling_announcement = "sizzles as it is grilled through."
+	drying_wetness = 30
+	dried_type = /obj/item/reagent_containers/food/snacks/jerky/cutlet
+
+/obj/item/reagent_containers/food/snacks/rawcutlet/Initialize()
+	. = ..()
+	reagents.add_reagent("protein", 1)
+
 /obj/item/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"
 	desc = "A synthetic slab of flesh."
@@ -55,9 +76,12 @@
 	filling_color = "#BBBBAA"
 
 /obj/item/reagent_containers/food/snacks/meat/chicken/Initialize()
-		. = ..()
-		reagents.remove_reagent("triglyceride", INFINITY)
-		//Chicken is low fat. Less total calories than other meats
+	. = ..()
+	reagents.remove_reagent("triglyceride", INFINITY)
+	//Chicken is low fat. Less total calories than other meats
+
+/obj/item/reagent_containers/food/snacks/meat/chicken/teshari
+	name = "meat"
 
 /obj/item/reagent_containers/food/snacks/meat/neaera
 	name = "Neaera meat"
@@ -66,6 +90,6 @@
 
 /obj/item/reagent_containers/food/snacks/meat/neaera/Initialize()
 	. = ..()
-	reagents.add_reagent("protein", 3)
-	reagents.add_reagent("seafood", 3)
+	reagents.add_reagent("protein", 3, TASTE_DATA(list("fainty fungal meat" = 3)))
+	reagents.add_reagent("seafood", 3, TASTE_DATA(list("fainty fungal meat" = 3)))
 	reagents.add_reagent("triglyceride", 2)

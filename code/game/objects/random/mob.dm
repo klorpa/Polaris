@@ -73,16 +73,17 @@
 	mob_wander_distance = 10
 
 /obj/random/mob/sif/item_to_spawn()
-	return pick(prob(30);/mob/living/simple_mob/animal/sif/diyaab,
+	return pick(prob(25);/mob/living/simple_mob/animal/sif/diyaab,
 				prob(20);/mob/living/simple_mob/animal/passive/hare,
-				prob(15);/mob/living/simple_mob/animal/passive/crab,
-				prob(15);/mob/living/simple_mob/animal/passive/penguin,
-				prob(15);/mob/living/simple_mob/animal/passive/mouse,
-				prob(15);/mob/living/simple_mob/animal/passive/dog/tamaskan,
-				prob(10);/mob/living/simple_mob/animal/sif/siffet,
+				prob(15);/mob/living/simple_mob/animal/sif/duck,
+				prob(10);/mob/living/simple_mob/animal/sif/glitterfly,
+				prob(10);/mob/living/simple_mob/animal/sif/sakimm,
+				prob(10);/mob/living/simple_mob/animal/sif/shantak,
+				prob(5);/mob/living/simple_mob/animal/sif/savik,
+				prob(5);/mob/living/simple_mob/animal/passive/mouse,
+				prob(5);/mob/living/simple_mob/animal/sif/hooligan_crab,
 				prob(2);/mob/living/simple_mob/animal/giant_spider/frost,
-				prob(1);/mob/living/simple_mob/animal/space/goose,
-				prob(20);/mob/living/simple_mob/animal/passive/crab)
+				prob(1);/mob/living/simple_mob/animal/sif/glitterfly/rare)
 
 
 /obj/random/mob/sif/peaceful
@@ -91,16 +92,31 @@
 	icon_state = "animal_passive"
 
 	mob_returns_home = 1
-	mob_wander_distance = 12
+	mob_wander_distance = 10
 
 /obj/random/mob/sif/peaceful/item_to_spawn()
 	return pick(prob(30);/mob/living/simple_mob/animal/sif/diyaab,
 				prob(20);/mob/living/simple_mob/animal/passive/hare,
-				prob(15);/mob/living/simple_mob/animal/passive/crab,
-				prob(15);/mob/living/simple_mob/animal/passive/penguin,
-				prob(15);/mob/living/simple_mob/animal/passive/mouse,
-				prob(15);/mob/living/simple_mob/animal/passive/dog/tamaskan,
-				prob(20);/mob/living/simple_mob/animal/sif/hooligan_crab)
+				prob(10);/mob/living/simple_mob/animal/sif/glitterfly,
+				prob(10);/mob/living/simple_mob/animal/sif/shantak/retaliate,
+				prob(10);/mob/living/simple_mob/animal/sif/sakimm,
+				prob(5);/mob/living/simple_mob/animal/passive/mouse,
+				prob(1);/mob/living/simple_mob/animal/sif/glitterfly/rare)
+				
+/obj/random/mob/sif/aquatic
+	name = "Random Aquatic Sif Animal"
+	desc = "This is a random aquatic animal that can be found on Sivian shores."
+	icon_state = "animal"
+
+	mob_returns_home = 1
+	mob_wander_distance = 10
+
+/obj/random/mob/sif/aquatic/item_to_spawn()
+	return pick(prob(30);/mob/living/simple_mob/animal/passive/crab/sif,
+				prob(25);/mob/living/simple_mob/animal/sif/duck,
+				prob(15);/mob/living/simple_mob/animal/sif/diyaab,
+				prob(5);/mob/living/simple_mob/animal/sif/hooligan_crab,
+				prob(1);/mob/living/simple_mob/animal/passive/karik)
 
 /obj/random/mob/sif/hostile
 	name = "Random Hostile Sif Animal"
@@ -238,6 +254,28 @@
 				prob(5);/mob/living/simple_mob/mechanical/hivebot/ranged_damage/laser,
 				prob(5);/mob/living/simple_mob/mechanical/hivebot/ranged_damage/strong,
 				prob(5);/mob/living/simple_mob/mechanical/hivebot/ranged_damage/strong/guard)
+				
+/obj/random/mob/robotic/hivebot/melee
+	name = "Random Lesser Melee Hivebot"
+	desc = "This is a random hivebot that engages in melee but has no special ability."
+	icon_state = "robot"
+
+	mob_faction = "hivebot"
+
+/obj/random/mob/robotic/hivebot/melee/item_to_spawn()
+	return pick(prob(10);/mob/living/simple_mob/mechanical/hivebot,
+				prob(5);/mob/living/simple_mob/mechanical/hivebot/swarm)
+				
+/obj/random/mob/robotic/hivebot/laser
+	name = "Random Laser Hivebot"
+	desc = "This is a random hivebot that can shoot through obstacles and does burn damage."
+	icon_state = "robot"
+
+	mob_faction = "hivebot"
+
+/obj/random/mob/robotic/hivebot/laser/item_to_spawn()
+	return pick(prob(30);/mob/living/simple_mob/mechanical/hivebot/ranged_damage/laser,
+				prob(5);/mob/living/simple_mob/mechanical/hivebot/ranged_damage/backline)
 
 //Mice
 
@@ -273,7 +311,7 @@
 				prob(15);/mob/living/simple_mob/animal/passive/fish/javelin,
 				prob(20);/mob/living/simple_mob/animal/passive/fish/rockfish,
 				prob(5);/mob/living/simple_mob/animal/passive/fish/solarfish,
-				prob(10);/mob/living/simple_mob/animal/passive/crab,
+				prob(10);/mob/living/simple_mob/animal/passive/crab/sif,
 				prob(1);/mob/living/simple_mob/animal/sif/hooligan_crab)
 
 /obj/random/mob/bird

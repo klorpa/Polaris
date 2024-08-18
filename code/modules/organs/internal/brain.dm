@@ -58,6 +58,12 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 /obj/item/organ/internal/brain/digitize()
 	replace_self_with(/obj/item/organ/internal/mmi_holder/robot)
 
+// Ensures languages are transferred properly when your brain is removed from your body (Hopefully)
+/obj/item/organ/internal/brain/handle_organ_mod_special(removed)
+	if (removed && brainmob)
+		brainmob.languages = owner.languages?.Copy() || list()
+	return ..()
+
 /obj/item/organ/internal/brain/handle_germ_effects()
 	. = ..() //Up should return an infection level as an integer
 	if(!.) return
@@ -116,7 +122,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	to_chat(brainmob, "<span class='notice'>You feel slightly disoriented. That's normal when you're just \a [initial(src.name)].</span>")
 	callHook("debrain", list(brainmob))
 
-/obj/item/organ/internal/brain/examine(mob/user) // -- TLE
+/obj/item/organ/internal/brain/examine(mob/user, distance, infix, suffix) // -- TLE
 	. = ..()
 	if(brainmob && brainmob.client)//if thar be a brain inside... the brain.
 		. += "You can feel the small spark of life still left in this one."

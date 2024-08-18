@@ -59,6 +59,8 @@
 	var/move_delay = 1
 	var/fire_sound = null // This is handled by projectile.dm's fire_sound var now, but you can override the projectile's fire_sound with this one if you want to.
 	var/fire_sound_text = "gunshot"
+	var/fire_volume_silenced = 10
+	var/fire_volume = 50
 	var/fire_anim = null
 	var/recoil = 0		//screen shake
 	var/silenced = 0
@@ -83,10 +85,10 @@
 	var/keep_aim = 1 	//1 for keep shooting until aim is lowered
 						//0 for one bullet after tarrget moves and aim is lowered
 	var/multi_aim = 0 //Used to determine if you can target multiple people.
-	var/tmp/list/mob/living/aim_targets //List of who yer targeting.
-	var/tmp/mob/living/last_moved_mob //Used to fire faster at more than one person.
-	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
-	var/tmp/lock_time = -100
+	var/list/mob/living/aim_targets //List of who yer targeting.
+	var/mob/living/last_moved_mob //Used to fire faster at more than one person.
+	var/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
+	var/lock_time = -100
 
 	var/dna_lock = 0				//whether or not the gun is locked to dna
 	var/obj/item/dnalockingchip/attached_lock
@@ -648,9 +650,9 @@
 		return
 
 	if(silenced)
-		playsound(src, shot_sound, 10, 1)
+		playsound(src, shot_sound, fire_volume_silenced, 1)
 	else
-		playsound(src, shot_sound, 50, 1)
+		playsound(src, shot_sound, fire_volume, 1)
 
 //Suicide handling.
 /obj/item/gun/var/mouthshoot = 0 //To stop people from suiciding twice... >.>
@@ -711,7 +713,7 @@
 		accuracy = initial(accuracy)
 		recoil = initial(recoil)
 
-/obj/item/gun/examine(mob/user)
+/obj/item/gun/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]

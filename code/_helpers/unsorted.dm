@@ -450,7 +450,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 		moblist.Add(M)
 	for(var/mob/living/carbon/brain/M in sortmob)
 		moblist.Add(M)
-	for(var/mob/living/carbon/alien/M in sortmob)
+	for(var/mob/living/carbon/diona/M in sortmob)
 		moblist.Add(M)
 	for(var/mob/observer/dead/M in sortmob)
 		moblist.Add(M)
@@ -1172,14 +1172,13 @@ var/global/list/common_tools = list(
 
 // Returns an instance of a valid surgery surface.
 /mob/living/proc/get_surgery_surface(mob/living/user)
-	if(!lying && user != src)
-		return null // Not lying down means no surface.
-	var/obj/surface = null
-	for(var/obj/O in loc) // Looks for the best surface.
-		if(O.surgery_odds)
-			if(!surface || surface.surgery_odds < O)
+	// Not lying down means no surface.
+	if(lying || user == src)
+		// Looks for the best surface.
+		var/obj/surface
+		for(var/obj/O in loc)
+			if(!surface || surface.surgery_odds < O.surgery_odds)
 				surface = O
-	if(surface)
 		return surface
 
 /proc/reverse_direction(var/dir)

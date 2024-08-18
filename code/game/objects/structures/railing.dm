@@ -45,7 +45,7 @@
 		return !density
 	return TRUE
 
-/obj/structure/railing/examine(mob/user)
+/obj/structure/railing/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(health < maxhealth)
 		switch(health / maxhealth)
@@ -63,6 +63,15 @@
 		playsound(src, 'sound/effects/grillehit.ogg', 50, 1)
 		new /obj/item/stack/rods(get_turf(src))
 		qdel(src)
+
+/obj/structure/railing/blob_act(var/obj/structure/blob/B)
+	. = ..()
+
+	if(B?.overmind?.blob_type)
+		take_damage(rand(B.overmind.blob_type.damage_lower, B.overmind.blob_type.damage_upper))
+		return
+
+	take_damage(rand(10,30))
 
 /obj/structure/railing/proc/NeighborsCheck(var/UpdateNeighbors = 1)
 	check = 0

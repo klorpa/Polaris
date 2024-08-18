@@ -27,7 +27,7 @@
 	QDEL_NULL(manipulator)
 	. = ..()
 
-/obj/item/gun/magnetic/matfed/examine(mob/user)
+/obj/item/gun/magnetic/matfed/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(manipulator)
 		. += "<span class='notice'>The installed [manipulator.name] consumes [mat_cost] units of [ammo_material] per shot.</span>"
@@ -128,7 +128,7 @@
 			loading = TRUE
 			while(mat_storage + SHEET_MATERIAL_AMOUNT <= max_mat_storage && do_after(user,1.5 SECONDS))
 				mat_storage += SHEET_MATERIAL_AMOUNT
-				playsound(src, 'sound/effects/phasein.ogg', 15, 1)
+				playsound(src, 'sound/effects/phoronborer.ogg', 15, 1)
 				M.use(1)
 				success = TRUE
 			loading = FALSE
@@ -192,7 +192,7 @@
 
 	return new projectile_type(src, rating_modifier)
 
-/obj/item/gun/magnetic/matfed/phoronbore/examine(mob/user)
+/obj/item/gun/magnetic/matfed/phoronbore/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(rating_modifier)
 		. += "<span class='notice'>A display on the side slowly scrolls the text \"BLAST EFFICIENCY [rating_modifier]\".</span>"

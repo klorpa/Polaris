@@ -42,6 +42,7 @@
 #include "borglab.dmm"
 #include "chasm.dmm"
 #include "deathden.dmm"
+#include "collapsedmine.dmm"
 
 #endif
 
@@ -285,7 +286,7 @@
 
 /datum/map_template/surface/wilderness/normal/Shelter1
 	name = "Shelter 1"
-	desc = "The remains of a resourceful, but prideful explorer."
+	desc = "The bitter end of a house after a drop pod crashed into it."
 	mappath = 'maps/submaps/surface_submaps/wilderness/Shelter.dmm'
 	cost = 10
 
@@ -354,3 +355,10 @@
 	desc = "A covert gene research lab guarded by combat drones."
 	mappath = 'maps/submaps/surface_submaps/wilderness/Research1.dmm'
 	cost = 30
+	
+/datum/map_template/surface/wilderness/deep/CollapsedMine
+	name = "Collapsed Mine"
+	desc = "A Grayson expeditionary base, filled with spiders and drone defenders."
+	mappath = 'maps/submaps/surface_submaps/wilderness/collapsedmine.dmm'
+	cost = 45
+

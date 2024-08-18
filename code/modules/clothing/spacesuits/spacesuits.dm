@@ -58,9 +58,9 @@
 		camera.c_tag = usr.name
 		to_chat(usr, "<font color='blue'>User scanned as [camera.c_tag]. Camera activated.</font>")
 
-/obj/item/clothing/head/helmet/space/examine(mob/user)
+/obj/item/clothing/head/helmet/space/examine(mob/user, distance, infix, suffix)
 	. = ..()
-	if(camera_networks && Adjacent(user))
+	if(camera_networks && distance < 2)
 		. += "This helmet has a built-in camera. It's [camera ? "" : "in"]active."
 
 /obj/item/clothing/suit/space
@@ -85,7 +85,7 @@
 	siemens_coefficient = 0.9
 	species_restricted = list("exclude",SPECIES_DIONA)
 	preserve_item = 1
-	valid_accessory_slots = (ACCESSORY_SLOT_OVER | ACCESSORY_SLOT_ARMBAND | ACCESSORY_SLOT_DECOR)
+	valid_accessory_slots = (ACCESSORY_SLOT_OVER | ACCESSORY_SLOT_ARMBAND | ACCESSORY_SLOT_DECOR | ACCESSORY_SLOT_MEDAL| ACCESSORY_SLOT_TIE)
 	var/list/supporting_limbs //If not-null, automatically splints breaks. Checked when removing the suit.
 
 /obj/item/clothing/suit/space/equipped(mob/M)

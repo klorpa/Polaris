@@ -38,6 +38,13 @@
 #include "priderock.dmm"
 #include "oldhotel.dmm"
 #include "VRDen.dmm"
+#include "reststop.dmm"
+#include "animalruin_den.dmm"
+#include "crescent_den.dmm"
+#include "plainsdrake_den.dmm"
+#include "pondside_den.dmm"
+#include "swampy_den.dmm"
+#include "TapeHouse.dmm"
 #endif
 
 
@@ -288,3 +295,45 @@
 	desc = "A temporarily abandoned VR den, still functional."
 	mappath = 'maps/submaps/surface_submaps/plains/VRDen.dmm'
 	cost = 10
+
+/datum/map_template/surface/plains/reststop
+	name = "Rest Stop"
+	desc = "Once this place was a nice spot to take a load off, now the wildlife call it home."
+	mappath = 'maps/submaps/surface_submaps/plains/reststop.dmm'
+	cost = 10
+
+/datum/map_template/surface/plains/animalruin_den
+	name = "Ruin Den"
+	desc = "A small fallen cabin that a creature is nesting in."
+	mappath = 'maps/submaps/surface_submaps/plains/animalruin_den.dmm'
+	cost = 5
+
+/datum/map_template/surface/plains/crescent_den
+	name = "Crescent Den"
+	desc = "An animal den, shaped like a cresecent moon."
+	mappath = 'maps/submaps/surface_submaps/plains/crescent_den.dmm'
+	cost = 5
+
+/datum/map_template/surface/plains/plainsdrake_den
+	name = "Plains Drake Den"
+	desc = "A cave where a drake is living."
+	mappath = 'maps/submaps/surface_submaps/plains/plainsdrake_den.dmm'
+	cost = 10
+
+/datum/map_template/surface/plains/pondside_den
+	name = "Pond Den"
+	desc = "A small animal den by a pond."
+	mappath = 'maps/submaps/surface_submaps/plains/pondside_den.dmm'
+	cost = 5	
+
+/datum/map_template/surface/plains/swampy_den
+	name = "Swamp Den"
+	desc = "A muddy animal den."
+	mappath = 'maps/submaps/surface_submaps/plains/swampy_den.dmm'
+	cost = 5
+
+/datum/map_template/surface/plains/TapeHouse
+	name = "Tape House"
+	desc = "An eerie and untouched abandoned home."
+	mappath = 'maps/submaps/surface_submaps/plains/TapeHouse.dmm'
+	cost = 15

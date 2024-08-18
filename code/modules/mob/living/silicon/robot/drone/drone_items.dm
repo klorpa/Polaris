@@ -30,11 +30,11 @@
 
 	var/force_holder = null //
 
-/obj/item/gripper/examine(mob/user)
+/obj/item/gripper/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(wrapped)
 		. += "<span class='notice'>\The [src] is holding \the [wrapped].</span>"
-		. += wrapped.examine(user)
+		. += wrapped.examine(user, distance, infix, suffix)
 
 /obj/item/gripper/CtrlClick(mob/user)
 	drop_item()
@@ -128,6 +128,17 @@
 		/obj/item/reagent_containers/food/snacks/cube
 
 		)
+
+/obj/item/gripper/cultivator
+	name = "cultivator gripper"
+	icon_state = "gripper"
+	desc = "A simple grasping tool used to perform tasks in the xenobiology division, such as handling plant samples and disks."
+	can_hold = list(
+		/obj/item/reagent_containers/glass,
+		/obj/item/seeds,
+		/obj/item/slime_extract,
+		/obj/item/disk/botany
+	)
 
 /obj/item/gripper/circuit
 	name = "circuit assembly gripper"

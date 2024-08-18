@@ -222,7 +222,10 @@
 	name = "Stimm"
 	id = "stimm"
 	description = "A homemade stimulant with some serious side-effects."
-	taste_description = "sweetness"
+	taste_description = list(
+		SPECIES_TESHARI      = "chalk",
+		TASTE_STRING_DEFAULT = "sweetness"
+	)
 	taste_mult = 1.8
 	color = "#d0583a"
 	metabolism = REM * 3
@@ -388,9 +391,12 @@
 
 /datum/reagent/toxin/fertilizer/tannin/touch_obj(var/obj/O, var/volume)
 	..()
-	if(istype(O, /obj/item/stack/hairlesshide))
-		var/obj/item/stack/hairlesshide/HH = O
-		HH.rapidcure(round(volume))
+	if(istype(O, /obj/item/stack/hairlesshide) && volume >= 1)
+		var/obj/item/stack/hairlesshide/dryhide = O
+		var/obj/item/stack/wetleather/wethide = new(O.loc, round(volume))
+		dryhide.use(round(volume))
+		if(!QDELETED(wethide) && wethide.get_amount())
+			wethide.dry_out(drying_power = INFINITY, silent = TRUE) // dry it immediately
 	..()
 
 /datum/reagent/toxin/plantbgone
@@ -489,7 +495,10 @@
 	name = "Pyrotoxin"
 	id = "thermite_v"
 	description = "A biologically produced compound capable of melting steel or other metals, similarly to thermite."
-	taste_description = "sweet chalk"
+	taste_description = list(
+		SPECIES_TESHARI      = "chalk",
+		TASTE_STRING_DEFAULT = "sweet chalk"
+	)
 	reagent_state = SOLID
 	color = "#673910"
 	touch_met = 50

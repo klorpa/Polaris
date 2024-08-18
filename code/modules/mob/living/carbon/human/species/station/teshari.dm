@@ -1,6 +1,6 @@
 /datum/species/teshari
 	name = SPECIES_TESHARI
-	name_plural = "Tesharii"
+	name_plural = "Teshari"
 	blurb = "A race of feathered raptors who developed alongside the Skrell, inhabiting \
 	the polar tundral regions outside of Skrell territory. Extremely fragile, they developed \
 	hunting skills that emphasized taking out their prey without themselves getting hit. They \
@@ -52,7 +52,7 @@
 	pass_flags = PASSTABLE
 	holder_type = /obj/item/holder/human
 //	short_sighted = 1
-	gluttonous = 1
+	gluttonous = GLUT_TINY
 	blood_volume = 400
 	hunger_factor = 0.2
 	hearboost = 1 //Big heckin chonker ultragigamega-ears.
@@ -134,8 +134,9 @@
 
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/sonar_ping,
-		/mob/living/proc/hide
-		)
+		/mob/living/proc/hide,
+		/mob/living/proc/toggle_pass_table
+	)
 
 	descriptors = list(
 		/datum/mob_descriptor/height = -3,
@@ -154,10 +155,13 @@
 	)
 
 	default_emotes = list(
+		/decl/emote/audible/warble,
 		/decl/emote/audible/teshsqueak,
 		/decl/emote/audible/teshchirp,
 		/decl/emote/audible/teshtrill
 	)
+
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken/teshari
 
 
 /datum/species/teshari/New()

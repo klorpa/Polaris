@@ -30,7 +30,7 @@
 			if(81 to 100)
 				add_overlay("bees3")
 
-/obj/machinery/beehive/examine(var/mob/user)
+/obj/machinery/beehive/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(!closed)
 		. += "The lid is open."
@@ -225,8 +225,7 @@
 
 /obj/item/honey_frame/update_icon()
 	..()
-
-	overlays.Cut()
+	cut_overlays()
 	if(honey > 0)
 		add_overlay("honeycomb")
 

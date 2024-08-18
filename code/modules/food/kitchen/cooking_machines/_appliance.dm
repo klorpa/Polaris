@@ -2,7 +2,7 @@
 
 // Tracks precooked food to stop deep fried baked grilled grilled grilled Diona nymph cereal.
 /obj/item/reagent_containers/food/snacks
-	var/tmp/list/cooked = list()
+	var/list/cooked = list()
 
 // Root type for cooking machines. See following files for specific implementations.
 /obj/machinery/appliance
@@ -66,9 +66,9 @@
 		qdel(CI)
 	return ..()
 
-/obj/machinery/appliance/examine(var/mob/user)
+/obj/machinery/appliance/examine(mob/user, distance, infix, suffix)
 	. = ..()
-	if(Adjacent(user))
+	if(distance < 2)
 		. += list_contents(user)
 
 /obj/machinery/appliance/proc/list_contents(var/mob/user)
@@ -98,7 +98,7 @@
 
 	var/half_overcook = (CI.overcook_mult - 1)*0.5
 	if (progress < 1+half_overcook)
-		return "<span class='soghun'><b>It is done !</b></span>"
+		return "<span class='soghun'><b>It is done!</b></span>"
 	if (progress < CI.overcook_mult)
 		return "<span class='warning'>It looks overcooked, get it out!</span>"
 	else
@@ -635,7 +635,7 @@
 		qdel(CI)
 	else
 		CI.reset()//reset instead of deleting if the container is left inside
-	user.visible_message("<span class='notice'>\The [user] remove \the [thing] from \the [src].</span>")
+	user.visible_message("<span class='notice'>\The [user] removes \the [thing] from \the [src].</span>")
 
 /obj/machinery/appliance/proc/cook_mob(var/mob/living/victim, var/mob/user)
 	return

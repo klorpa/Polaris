@@ -13,7 +13,7 @@
 	var/static/radial_use = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_use")
 	var/static/radial_pickup = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_pickup")
 
-/obj/item/deskbell/examine(mob/user)
+/obj/item/deskbell/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(broken)
 		. += "<b>It looks damaged, the ringer is stuck firmly inside.</b>"
@@ -88,7 +88,7 @@
 	if(!istype(W))
 		return
 	if(W.is_wrench() && isturf(loc))
-		if(do_after(5))
+		if(do_after(user, 5, src))
 			if(!src) return
 			to_chat(user, "<span class='notice'>You dissasemble the desk bell</span>")
 			new /obj/item/stack/material/steel(get_turf(src), 1)

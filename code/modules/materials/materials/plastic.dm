@@ -30,7 +30,8 @@
 		new /datum/stack_recipe("lampshade", /obj/item/lampshade, 1, time = 1, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("plastic net", /obj/item/material/fishing_net, 25, time = 1 MINUTE, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("plastic fishtank", /obj/item/glass_jar/fish/plastic, 2, time = 30 SECONDS, recycle_material = "[name]"),
-		new /datum/stack_recipe("reagent tubing", /obj/item/stack/hose, 1, 4, 20, pass_stack_color = TRUE, recycle_material = "[name]")
+		new /datum/stack_recipe("reagent tubing", /obj/item/stack/hose, 1, 4, 20, pass_stack_color = TRUE, recycle_material = "[name]"),
+		new /datum/stack_recipe("playing chip", /obj/item/poker_chip/c100, 1, 100, 20, pass_stack_color = TRUE, recycle_material = "[name]")
 	)
 
 /datum/material/cardboard
@@ -58,6 +59,7 @@
 	recipes += list(
 		new /datum/stack_recipe("box", /obj/item/storage/box, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("donut box", /obj/item/storage/box/donut/empty, pass_stack_color = TRUE, recycle_material = "[name]"),
+		new /datum/stack_recipe("nugget box", /obj/item/storage/box/nuggets/empty, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("egg box", /obj/item/storage/fancy/egg_box, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("light tubes box", /obj/item/storage/box/lights/tubes, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("light bulbs box", /obj/item/storage/box/lights/bulbs, pass_stack_color = TRUE, recycle_material = "[name]"),

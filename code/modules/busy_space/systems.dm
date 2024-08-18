@@ -60,7 +60,7 @@
 		new /datum/lore/location("Paradise Bay on Earth, Sol", list(ATC_TYPICAL)),
 		new /datum/lore/location("Atlantis on Earth, Sol", list(ATC_INDU, ATC_SCI)),
 		new /datum/lore/location("Elevator City on Earth, Sol", list(ATC_TYPICAL)),
-		new /datum/lore/location("Antanavario on Earth, Sol", list(ATC_TYPICAL, ATC_DIPLO)), //they independent baybe
+		new /datum/lore/location("Antananarivo on Earth, Sol", list(ATC_TYPICAL, ATC_DIPLO)), //they independent baybe
 		new /datum/lore/location("Paris on Earth, Sol", list(ATC_ALL_CIV, ATC_DIPLO)), //just a reasonable number of existing world cities that would not be underwater or desertified. by which i mean god please check my work on this.
 		new /datum/lore/location("Detroit on Earth, Sol", list(ATC_ALL_CIV, ATC_DIPLO)), //it's not clear which parts of earth are independent now so let's just assume the diplomatic corps is working on all of them
 		new /datum/lore/location("Dubai on Earth, Sol", list(ATC_ALL_CIV, ATC_DIPLO)),
@@ -68,7 +68,7 @@
 		new /datum/lore/location("Dakar on Earth, Sol", list(ATC_ALL_CIV, ATC_DIPLO)),
 		new /datum/lore/location("Sao Paulo on Earth, Sol", list(ATC_ALL_CIV, ATC_DIPLO)),
 		new /datum/lore/location("Mojave University on Earth, Sol", list(ATC_SCI)),
-		new /datum/lore/location("a station orbitting Earth, Sol", list(ATC_ALL_CIV)),
+		new /datum/lore/location("a station orbiting Earth, Sol", list(ATC_ALL_CIV)),
 		new /datum/lore/location("a colony in Earth-Luna Lagrange Orbit in Sol", list(ATC_ALL_CIV)),
 		new /datum/lore/location("Tycho on Luna, Sol", list(ATC_ALL_CIV)),
 		new /datum/lore/location("the Pearlshield Coalition embassy in Tycho, Luna, Sol", list(ATC_DIPLO)), // a lot of embassy spam but most orgs don't do diplomatic missions so they'll be ignored
@@ -117,12 +117,20 @@
 	autogenerate_destinations = FALSE
 	planets = list("Sif")
 	locations = list(
-		new /datum/lore/location("New Rekjavik", list(ATC_ALL_CIV)), //sivian locations don't need 'on sif' and virite locations dont need 'in vir'-- theyre local
+		new /datum/lore/location("New Reykjavik", list(ATC_ALL_CIV)), //sivian locations don't need 'on sif' and virite locations dont need 'in vir'-- theyre local
 		new /datum/lore/location("Kalmar", list(ATC_ALL_CIV)),
 		new /datum/lore/location("Ekmanshalvo", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Drammen", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Oswego", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Usinari", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Overforingsfjell", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Eyri", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Ginkgo", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Drakasfjord", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Karsvag", list(ATC_ALL_CIV)),
 		new /datum/lore/location("a settlement on the Thorvaldsson Plains", list(ATC_TYPICAL)), //padding
 		new /datum/lore/location("a mining outpost in the Dauthabrekka Mountains", list(ATC_TYPICAL)),
-		new /datum/lore/location("a corporate facility in Stockholm-Skargard", list(ATC_TYPICAL, ATC_SCI)),
+		new /datum/lore/location("a corporate facility in Stockholms-Skargard", list(ATC_TYPICAL, ATC_SCI)),
 		new /datum/lore/location("a site in the Ullran Expanse", list(ATC_MED, ATC_DEF, ATC_INDU)),
 		new /datum/lore/location("a location in the Anomalous Region", list(ATC_SCI)),
 		new /datum/lore/location("the NLS Southern Cross", list(ATC_DEF, ATC_INDU)),
@@ -130,7 +138,8 @@
 		new /datum/lore/location("Vir Interstellar Spaceport", list(ATC_TYPICAL)),
 		new /datum/lore/location("Firnir", list(ATC_TYPICAL)),
 		new /datum/lore/location("Tyr", list(ATC_TYPICAL)),
-		new /datum/lore/location("Magnai", list(ATC_TYPICAL)),
+		new /datum/lore/location("Magni", list(ATC_TYPICAL)),
+		new /datum/lore/location("Thor", list(ATC_TYPICAL)),
 		new /datum/lore/location("the rings of Kara", list(ATC_LUX)),
 		new /datum/lore/location("the rings of Rota", list(ATC_LUX)),
 		new /datum/lore/location("the Radiance Energy Chain", list(ATC_FREIGHT, ATC_DEF, ATC_INDU)),
@@ -144,8 +153,8 @@
 
 /datum/lore/system/alpha_centauri
 	name = "Alpha Centauri"
-	desc = "The stars closest to Sol and the site of the first extrasolar colonies. The worlds orbitting Proxima Centauri were colonized by stateless refugees\
-	 as part of an early SCG migration program.The habitats orbitting Alpha Centauri proper were colonized by radical terrorists fleeing Solar law enforcement.\
+	desc = "The stars closest to Sol and the site of the first extrasolar colonies. The worlds orbiting Proxima Centauri were colonized by stateless refugees\
+	 as part of an early SCG migration program. The habitats orbiting Alpha Centauri proper were colonized by radical terrorists fleeing Solar law enforcement.\
 	 There is some tension."
 	planets = list("Kishar", "Anshar")
 	locations = list(
@@ -153,7 +162,7 @@
 		new /datum/lore/location("Putiya Nadu on Kishar, Alpha Centauri", list(ATC_ALL_CIV)),
 		new /datum/lore/location("Oyo-ni-aaye on Kishar, Alpha Centauri", list(ATC_ALL_CIV)),
 		new /datum/lore/location("Valhalla in Heaven, Alpha Centauri", list(ATC_TYPICAL)),
-		new /datum/lore/location("Elyisum in Heaven, Alpha Centauri", list(ATC_TYPICAL)),
+		new /datum/lore/location("Elysium in Heaven, Alpha Centauri", list(ATC_TYPICAL)),
 		new /datum/lore/location("the remains of Ragnarok, Alpha Centauri", list(ATC_INDU, ATC_FREIGHT, ATC_SCI)),
 		new /datum/lore/location("The Rings in Heaven, Alpha Centauri", list(ATC_ALL_CIV)),
 		new /datum/lore/location("The Angelic College at Makon, Alpha Centauri", list(ATC_SCI))
@@ -168,7 +177,7 @@
 		new /datum/lore/location("New Florence, Binma, Tau Ceti", list(ATC_ALL_CIV)),
 		new /datum/lore/location("Mandala Sur, Binma, Tau Ceti", list(ATC_ALL_CIV)),
 		new /datum/lore/location("the Kesalon, Binma, Tau Ceti", list(ATC_SCI, ATC_TRANS, ATC_LUX)),
-		new /datum/lore/location("the Hyperion Orbital Scaffhold around Binma, Tau Ceti", list(ATC_ALL_CIV)),
+		new /datum/lore/location("the Hyperion Orbital Scaffold around Binma, Tau Ceti", list(ATC_ALL_CIV)),
 		new /datum/lore/location("Ceti Technical Institute, Binma, Tau Ceti", list(ATC_SCI)),
 		new /datum/lore/location("Aria, Tau Ceti", list(ATC_INDU, ATC_FREIGHT, ATC_LUX)),
 		new /datum/lore/location("LL1, Tau Ceti", list(ATC_INDU, ATC_FREIGHT, ATC_TRANS)),
@@ -202,11 +211,14 @@
 		new /datum/lore/location("Gilthari Casino in Sophia, El", list(ATC_LUX, ATC_TRANS)),
 		new /datum/lore/location("the Old City in Sophia, El", list(ATC_FREIGHT, ATC_TRANS, ATC_DEF, ATC_SCI, ATC_LUX)),
 		new /datum/lore/location("the Pleroman Cathedral in Sophia, El", list(ATC_LUX, ATC_TRANS)),
+		new /datum/lore/location("Reconciliation Towers in Sophia, El", list(ATC_TRANS, ATC_FREIGHT)),
 		new /datum/lore/location("a habitat block in Sophia, El", list(ATC_FREIGHT, ATC_TRANS, ATC_DEF)), //Sophia doesn't really get medical ships because it's all fucking robots
 		new /datum/lore/location("a Morpheus Sol facility in Sophia, El", list(ATC_FREIGHT, ATC_TRANS, ATC_DEF, ATC_SCI)), //padding -- autogenerated locations aren't going to play nicely with Sophia's topography
 		new /datum/lore/location("a datacenter in Sophia, El", list(ATC_FREIGHT, ATC_TRANS, ATC_DEF, ATC_SCI)),
 		new /datum/lore/location("a dig site in Sophia, El", list(ATC_TYPICAL, ATC_SCI)),
-		new /datum/lore/location("the MAS Sophia Jr. in El", list(ATC_TYPICAL, ATC_SCI))
+		new /datum/lore/location("the MAS Sophia Jr. in El", list(ATC_TYPICAL, ATC_SCI)),
+		new /datum/lore/location("Henosis, El", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Aeon Habitation, El", list(ATC_TYPICAL))
 		)
 
 //it is objectively weird as hell that these are "major systems" but they have words on
@@ -221,10 +233,11 @@
 		new /datum/lore/location("the NSS Exodus in Nyx", list(ATC_TYPICAL, ATC_SCI)),
 		new /datum/lore/location("the NAS Crescent in Nyx", list(ATC_TYPICAL)),
 		new /datum/lore/location("Talon's Bull in Nyx", list(ATC_TYPICAL)),
-		new /datum/lore/location("Emerald Habitation in Nyx", list(ATC_TYPICAL)),
+		new /datum/lore/location("the remains of Emerald Habitation in Nyx", list(ATC_SALVAGE)),
 		new /datum/lore/location("the Void Star in Nyx", list(ATC_TRANS, ATC_FREIGHT, ATC_LUX)),
 		new /datum/lore/location("Euthenia, Nyx", list(ATC_TYPICAL)),
-		new /datum/lore/location("an Incursion wreck", list(ATC_SALVAGE))
+		new /datum/lore/location("an Incursion wreck in Nyx", list(ATC_SALVAGE)),
+		new /datum/lore/location("the Erebus Path Anomaly in Nyx", list(ATC_SCI))
 		)
 
 /datum/lore/system/altair //hey do you think altair like. survived the incursion actually
@@ -233,12 +246,26 @@
 	space_destinations = list("a station", "a vessel", "a waystation", "an outpost", "an anomaly","a facility")
 	locations = list(
 		new /datum/lore/location("The Stack in Altair", list(ATC_TRANS, ATC_MED, ATC_DEF)),
-		new /datum/lore/location("Becquerel Station in Altair", list(ATC_TYPICAL))
+		new /datum/lore/location("Becquerel Station in Altair", list(ATC_TYPICAL)),
+		new /datum/lore/location("The Altair Walled Garden", list(ATC_TRANS, ATC_MED))
 		)
 
 /datum/lore/system/altair/New()
 	space_destinations -= list("a dockyard", "a sattelite", "a spaceport", "a habitat") // altair kind of sucks
 	..()
+
+/datum/lore/system/rubicon
+	name = "Rubicon"
+	desc = "Founded by ex-pirates, ex-smugglers, and legally-not Fleet deserters, Rubicon is a transhumant trade fleet with an on-again off-again trade empire, well-established gift economy, and numerous credible accusations of violation of international law."
+	autogenerate_destinations = FALSE
+	locations = list(
+		new /datum/lore/location("Ovloi mooring, Rubicon", list(ATC_TYPICAL)),
+		new /datum/lore/location("Jaon mooring, Rubicon", list(ATC_TYPICAL)),
+		new /datum/lore/location("Azla mooring,Rubicon", list(ATC_MED, ATC_DEF, ATC_INDU, ATC_SCI)), //currently so irradiated
+		new /datum/lore/location("The IFV Ravana in Rubicon", list(ATC_TYPICAL)),
+		new /datum/lore/location("The XIV Kulakov in Rubicon", list(ATC_TYPICAL)),
+		new /datum/lore/location("The RDF-V Rubicon in Rubicon", list(ATC_TYPICAL))
+		)
 
 //SolGov minor systems
 //limiting to systems that are at least, like, kind of described -- stuff like Ganesha and Stove which just have names and map points aren't making it until someone writes them up
@@ -288,7 +315,8 @@
 	locations = list( //discord indicates they had some Troubles during the incursion but IDK anything fun to give them as a result
 		new /datum/lore/location("Yod habitation complex, Raphael", list(ATC_ALL_CIV)),
 		new /datum/lore/location("He habitation complex, Raphael", list(ATC_ALL_CIV)),
-		new /datum/lore/location("Waw habitation complex, Raphael", list(ATC_ALL_CIV))
+		new /datum/lore/location("Waw habitation complex, Raphael", list(ATC_ALL_CIV)),
+		new /datum/lore/location("Bolt arkship in Raphael", list(ATC_TYPICAL, ATC_SCI, ATC_DIPLO))
 		)
 
 /datum/lore/system/love
@@ -298,20 +326,25 @@
 	locations = list(
 		new /datum/lore/location("a 'facility' in Love", list(ATC_ALL_CIV)), //i find this funny but you can nyx it if you want
 		new /datum/lore/location("a pharmacy in Love", list(ATC_ALL_CIV)), // this is probably the more serious version of the above
-		new /datum/lore/location("an independent mecenary outpost in Love", list(ATC_TYPICAL)),
+		new /datum/lore/location("an independent mercenary outpost in Love", list(ATC_TYPICAL)),
 		new /datum/lore/location("Colony Daring in Love", list(ATC_TYPICAL, ATC_DIPLO))
 		)
 
 /datum/lore/system/terminus
 	name = "Terminus Station"
-	desc = "A deep space outpost. Major academic institution, inventor of the Terminus language, kind of racist." //super super super needs an Incursion pass lol
+	desc = "A deep space outpost. Major academic institution, inventor of the Terminus language, kind of racist. Got completely fucking ruined."
 	autogenerate_destinations = FALSE //its just one really big station
 	locations = list(
-		new /datum/lore/location("Terminus Station", list(ATC_ALL_CIV)),
+		new /datum/lore/location("the ruins of Terminus Station", list(ATC_SALVAGE)),
 		new /datum/lore/location("the Stream Terminus", list(ATC_SCI)),
 		new /datum/lore/location("a caravan gathering around Terminus Station", list(ATC_TYPICAL, ATC_SCI)),
-		new /datum/lore/location("an academy on Terminus Station", list(ATC_SCI)),
-		new /datum/lore/location("an observatory on Terminus Station", list(ATC_SCI))
+		)
+
+/datum/lore/system/procyon
+	name = "Procyon"
+	desc = "A space fueling depot and tourist cul-de-sac."
+	locations = list(
+		new /datum/lore/location("a fueling depot in Procyon", list(ATC_TYPICAL, ATC_LUX)) //rich people are fucking weird
 		)
 
 //these are the minimally-detailed not-on-the-wiki systems i could find enough discord / code / timeline lore on to be worth including
@@ -610,4 +643,20 @@
 	autogenerate_destinations = FALSE
 	locations = list(
 		new /datum/lore/location("the Embassy to the Khepri People in New Cairo orbit", list(ATC_DIPLO)) //there is nothing to do here but talk to the bugs
+		)
+//dummy systems -- not actual map locations, used to produce certain off-map results
+/datum/lore/system/dummy
+	desc = "You shouldn't be seeing this."
+	autogenerate_destinations = FALSE
+
+/datum/lore/system/dummy/gsa
+	locations = list(
+		new /datum/lore/location("a site in the Nyxian Corridor", list(ATC_SCI)),
+		new /datum/lore/location("a site in the Lower Bowl", list(ATC_SCI)),
+		new /datum/lore/location("a site in the Mirfak Brink", list(ATC_SCI)),
+		new /datum/lore/location("a site in trans-Rarkajaran space", list(ATC_SCI)),
+		new /datum/lore/location("a site in the Dark Triangle", list(ATC_SCI)),
+		new /datum/lore/location("a site in the Rarkajar Rift", list(ATC_SCI)),
+		new /datum/lore/location("a site in the the Curtain", list(ATC_SCI)),
+		new /datum/lore/location("a classified location", list(ATC_SCI)),
 		)

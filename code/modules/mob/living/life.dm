@@ -16,13 +16,12 @@
 	handle_light()
 
 	if(stat != DEAD)
+
 		//Breathing, if applicable
 		handle_breathing()
 
 		//Mutations and radiation
 		handle_mutations_and_radiation()
-
-
 
 		//Blood
 		handle_blood()
@@ -123,6 +122,8 @@
 	handle_confused()
 
 /mob/living/proc/handle_sleeping()
+	if(stat != DEAD && toggled_sleeping)
+		Sleeping(2)
 	if(sleeping)
 		AdjustSleeping(-1)
 		throw_alert("asleep", /obj/screen/alert/asleep)
@@ -246,7 +247,7 @@
 			return TRUE
 
 	else if(on_fire)
-		set_light(min(round(fire_stacks), 3), round(fire_stacks), l_color = "#FF9933")
+		set_light(min(round(fire_stacks), 3), round(fire_stacks), l_color = COLOR_FIRE_ORANGE)
 		return TRUE
 
 	else if(glow_toggle)

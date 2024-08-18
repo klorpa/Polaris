@@ -6,7 +6,7 @@
 
 	starts_with = list(
 		/obj/item/clothing/head/helmet/HoS,
-		/obj/item/clothing/head/helmet/HoS/hat,
+		/obj/item/clothing/head/helmet/HoS/cap,
 		/obj/item/clothing/suit/armor/pcarrier/light/nt/cynosure,
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/under/rank/head_of_security/corp,
@@ -18,10 +18,9 @@
 		/obj/item/radio/headset/heads/hos/alt,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
-		/obj/item/shield/riot,
 		/obj/item/shield/riot/tele,
 		/obj/item/storage/box/holobadge/hos,
-		/obj/item/clothing/accessory/badge/holo/hos,
+		/obj/item/clothing/accessory/medal/badge/holo/hos,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/tool/crowbar/red,
 		/obj/item/storage/box/flashbangs,
@@ -33,11 +32,13 @@
 		/obj/item/clothing/accessory/holster/waist,
 		/obj/item/melee/telebaton,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/security,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/security/hos,
 		/obj/item/clothing/shoes/boots/winter/security,
 		/obj/item/flashlight/maglight,
 		/obj/item/clothing/mask/gas/half,
-		/obj/item/clothing/mask/gas/sechailer/swat/hos)
+		/obj/item/clothing/mask/gas/sechailer/swat/hos,
+		/obj/item/clothing/accessory/storage/black_vest
+	)
 
 /obj/structure/closet/secure_closet/hos/Initialize()
 	if(prob(50))
@@ -69,7 +70,7 @@
 		/obj/item/radio/headset/headset_sec/alt,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
-		/obj/item/clothing/accessory/badge/holo/warden,
+		/obj/item/clothing/accessory/medal/badge/holo/warden,
 		/obj/item/storage/box/flashbangs,
 		/obj/item/storage/belt/security,
 		/obj/item/reagent_containers/spray/pepper,
@@ -160,7 +161,7 @@
 	closet_appearance = /decl/closet_appearance/cabinet/secure
 
 	starts_with = list(
-		/obj/item/clothing/accessory/badge/holo/detective,
+		/obj/item/clothing/accessory/medal/badge/holo/detective,
 		/obj/item/clothing/gloves/black,
 		/obj/item/gunbox,
 		/obj/item/storage/belt/detective,

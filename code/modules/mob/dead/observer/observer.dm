@@ -169,7 +169,7 @@
 		set_cached_examine_icon(src, I, 200 SECONDS)
 	return I
 
-/mob/observer/dead/examine(mob/user)
+/mob/observer/dead/examine(mob/user, distance, infix, suffix)
 	. = ..()
 
 	if(is_admin(user))
@@ -971,3 +971,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Respawn"
 	set category = "Ghost"
 	src.abandon_mob()
+
+/mob/observer/dead/should_confirm_respawn()
+	return admin_ghosted || ..()

@@ -13,6 +13,14 @@
 		Open()
 
 
+/obj/structure/fence/door/interaction_grafadreka(mob/living/simple_mob/animal/sif/grafadreka/drake)
+	. = TRUE
+	if (drake.a_intent == I_HURT)
+		return ..()
+	if (!open && !locked)
+		toggle(drake)
+
+
 /obj/structure/loot_pile/interaction_grafadreka(mob/living/simple_mob/animal/sif/grafadreka/drake)
 	. = TRUE
 	if (drake.a_intent == I_HURT)
@@ -38,6 +46,29 @@
 		range = 5
 	)
 	qdel(src)
+
+
+/obj/structure/outcrop/interaction_grafadreka(mob/living/simple_mob/animal/sif/grafadreka/drake)
+	. = TRUE
+	drake.visible_message(
+		SPAN_ITALIC("\The [drake] claws away at \a [src]."),
+		SPAN_ITALIC("You dig industriously at \the [src]."),
+		SPAN_ITALIC("You hear something scrabbling on stone!"),
+		range = 5
+	)
+	if (!do_after(drake, 4 SECONDS, src))
+		return
+	visible_message(
+		SPAN_WARNING("\The [src] crumbles away to debris."),
+		SPAN_NOTICE("You finish digging up the [src]."),
+		SPAN_ITALIC("You hear small rocks tumbling around!"),
+		range = 5
+	)
+	var/turf/turf = get_turf(src)
+	qdel(src)
+	if (turf)
+		for (var/i = 1 to rand(mindrop, upperdrop))
+			new outcropdrop (turf)
 
 
 /obj/item/bikehorn/interaction_grafadreka(mob/living/simple_mob/animal/sif/grafadreka/drake)
@@ -89,6 +120,19 @@
 	if (drake.trained_drake && drake.a_intent == I_GRAB)
 		drake.CollectItem(src)
 		return TRUE
+
+
+/obj/item/soap/interaction_grafadreka(mob/living/simple_mob/animal/sif/grafadreka/trained/drake)
+	if (drake.trained_drake && drake.a_intent != I_GRAB)
+		playsound(src,'sound/items/eatfood.ogg', rand(10, 50), TRUE)
+		drake.visible_message(
+			SPAN_ITALIC("\The [drake] eats \a [src]."),
+			SPAN_ITALIC("You eat \the [src]."),
+			SPAN_ITALIC("You hear an odd gooey chewing sound.")
+		)
+		qdel(src)
+		return TRUE
+	return ..()
 
 
 /obj/machinery/button/interaction_grafadreka(mob/living/simple_mob/animal/sif/grafadreka/trained/drake)
